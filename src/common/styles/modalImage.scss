@@ -1,0 +1,215 @@
+.modalimages {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	z-index: 10;
+	left: 0;
+	top: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	overflow: auto;
+	color: var(--color);
+	&__close {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: 11;
+		left: 0;
+		top: 0;
+		cursor: default;
+	}
+	&__body {
+		margin: 80px;
+		background-color: var(--headcolor);
+		padding: 20px;
+		border-radius: 5px;
+		position: relative;
+		z-index: 12;
+		max-width: 100%;
+		@media (orientation: portrait) {
+			margin: 50px 20px;
+		}
+		@media (max-width: 767px) {
+			margin: 50px 10px;
+		}
+		.profile__body {
+			padding: 60px;
+			text-align: left;
+			@media (max-width: 767px) {
+				padding: 60px 0px;
+			}
+			&-center {
+				margin: 20px 0;
+				& p {
+					margin: 20px 0;
+					& span {
+						color: var(--secondcolor);
+					}
+				}
+			}
+			&-social {
+				& p {
+					margin: 10px 0;
+					display: flex;
+					align-items: center;
+					gap: 10px;
+					cursor: pointer;
+					&:hover {
+						color: var(--secondcolor);
+					}
+				}
+			}
+			&-top {
+				display: flex;  
+				align-items: flex-start;
+				gap: 50px;
+				@media (max-width: 767px) {
+					gap: 10px;
+				}
+				& img {
+					border-radius: 5px;
+					@media (max-width: 767px) {
+						width: 60px;
+					}
+				}
+				& h2 {
+					font-size: calc(var(--index) * 3);
+					@media (orientation: portrait) {
+						font-size: calc(var(--index) * 2.3);
+					}
+				}
+				& h3 {
+					font-size: calc(var(--index) * 2);
+					@media (orientation: portrait) {
+						font-size: calc(var(--index) * 1.3);
+					}
+					& span {
+						color: var(--secondcolor);
+					}	
+				}
+			}
+			&-bottom {
+				margin-top: 40px;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				@media (max-width: 767px) {
+					flex-wrap: wrap;
+					gap: 20px;
+				}
+				&-item {
+					display: flex;
+					align-items: center;
+					gap: 10px;
+					@media (orientation: portrait) {
+						gap: 5px;
+						flex: 0 0 20%;
+					}
+					@media (max-width: 767px) {
+						flex: 1 1 40%;
+					}
+					& span {
+						color: var(--secondcolor);
+						margin-top: 5px;
+						display: block;
+					}
+				}
+			}
+		}
+		&-info {
+			padding-top: 30px;
+			padding-bottom: 20px;
+			text-align: left;
+			&-column {
+				display: flex;
+				align-items: flex-start;
+				justify-content: space-between;
+				gap: 20px;
+				margin-bottom: 40px;
+				@media (max-width: 767px) {
+					flex-direction: column-reverse;
+				}
+				&.tags {
+					display: flex;
+					align-items: flex-start;
+					gap: 20px;
+					justify-content: flex-start;
+					@media (max-width: 767px) {
+						flex-direction: row;
+						gap: 10px;
+					}
+					& ul {
+						display: flex;
+						flex-wrap: wrap;
+						& li {
+							display: flex;
+							align-items: center;
+						}
+					}
+				}
+				&.user {
+					display: flex;
+					align-items: center;
+					justify-content: flex-start;
+					font-size: calc(var(--index) * 1.3);
+					@media (max-width: 767px) {
+						flex-direction: row;
+					}
+					&:hover {
+						text-decoration: underline;
+						cursor: pointer;
+					}
+					& img {
+						border-radius: 50%;
+					}
+				}
+				& h2{
+					color: var(--secondcolor);
+					font-size: calc(var(--index) * 1.5);
+				}
+				& div {
+					& span {
+						color: var(--secondcolor);
+					}
+				}
+				& > span {
+					display: flex;
+					align-items: center;
+					gap: 5px;
+					font-size: calc(var(--index) * 0.8);
+				}
+			}
+		}
+		&-image {
+			padding: 20px 200px;
+			@media (orientation: portrait) {
+				padding: 20px 50px;
+			}
+			@media (max-width: 767px) {
+				padding: 50px 10px;
+				padding-bottom: 10px;
+			}
+			& img {
+				max-width: 100%;
+			}
+		}
+		&-close {
+			position: absolute;
+			left: 10px;
+			top: 10px;
+			cursor: pointer;
+			&:hover {
+				color: var(--secondcolor);
+			}
+		}
+		&-download {
+			position: absolute;
+			right: 10px;
+			top: 10px;
+			cursor: pointer;
+			&:hover {
+				color: var(--secondcolor);
+			}
+		}
+	} 
+}
+  

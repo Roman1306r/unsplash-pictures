@@ -1,0 +1,173 @@
+.App {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	color: var(--color);
+	background: rgb(51,51,51);
+	background: radial-gradient(circle, rgba(51,51,51,1) 45%, rgba(51,51,51,1) 54%, rgba(51,51,51,0.8715861344537815) 65%, rgba(51,51,51,1) 72%, rgba(51,51,51,1) 76%, rgba(51,51,51,1) 81%, rgba(51,51,51,0.8799894957983193) 100%);
+	& main {
+		padding: calc(var(--index) * 3) calc(var(--index) * 5);  
+		text-align: center;
+		@media (orientation: portrait) {
+			padding: calc(var(--index) * 2) 10px;  
+			padding-bottom: calc(var(--index) * 5);
+		}
+		& > h2 {
+			margin-bottom: 40px;
+			font-size: calc(var(--index) * 2.5);
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 20px;
+			& .query {
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				&-icon {
+					color: var(--secondcolor);
+				}
+			}
+		}
+	}
+}
+
+
+
+.MuiList-root {
+	& li {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+}
+
+
+.initial {
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	z-index: 1000;
+	color: var(--color);
+	overflow: hidden;
+	&__dark {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1001;
+		background: rgb(51,51,51);
+		background: radial-gradient(circle,  rgba(51,51,51,0.8715861344537815) 65%,  rgba(51,51,51,1) 76%, rgba(51,51,51,1) 81%, rgba(51,51,51, 1) 100%);
+	}
+	&__body {
+		position: absolute;
+		bottom: 10%;
+		left: 50%;
+		text-align: center;
+		transform: translateX(-50%);
+		z-index: 1002;
+		user-select: none;
+		& p {
+			margin-bottom: calc(var(--index) * 5);
+			font-size: calc(var(--index) * 2);
+		}
+		& button {
+			position: relative;
+			transform: scale(1.5);
+			background-color: var(--secondcolor);
+			&:hover {
+				& .text {
+					transform: scale(0);
+				}
+				& .icon {
+					transform: scale(1);
+				}
+			}
+			& .text {
+				transition: all 0.2s;
+			}
+			& .icon {
+				transition: all 0.2s;
+				position: absolute;
+				transform: scale(0);
+			}
+		}
+	}
+}
+
+.nothing {
+	user-select: none;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	& h1 {
+		font-size: calc(var(--index) * 2);
+		animation: glitch 1s linear infinite;
+		color: var(--secondcolor);
+		&:before,
+		&:after{
+			content: attr(title);
+			position: absolute;
+			left: 0;
+		}
+		&:before{
+			animation: glitchTop 1s linear infinite;
+			clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+			-webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+		}
+		&:after{
+			animation: glitchBotom 1.5s linear infinite;
+			clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+			-webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+		}
+	}
+}
+
+
+
+.loader {
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transform: scale(2.5);
+	z-index: 100;
+	width: 100%;
+	background-color: var(--headcolor);
+	height: 100%;
+	z-index: 200;
+	@media (orientation: portrait) {
+		transform: scale(1.5);
+	}
+	&__body {
+	  width: 50px;
+	  aspect-ratio: 1;
+	  display: grid;
+	  &::before,
+	  &::after {    
+		content:"";
+		grid-area: 1/1;
+		--c:no-repeat radial-gradient(farthest-side, var(--secondcolor) 90%, #0000);
+		background: 
+		  var(--c) 50%  0, 
+		  var(--c) 50%  100%, 
+		  var(--c) 100% 50%, 
+		  var(--c) 0    50%;
+		background-size: 12px 12px;
+		animation: l12 1s infinite;
+	  }
+	  &::before {
+		margin: 4px;
+		--c:no-repeat radial-gradient(farthest-side, var(--color) 62%, #0000);
+		background-size: 8px 8px;
+		animation-timing-function: linear
+	  }
+	}
+}
+
+
+
+
+

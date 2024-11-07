@@ -1,0 +1,102 @@
+.images {
+	&__container {
+		@media (max-width: 767px) {
+			padding: 0 20px !important;
+		}
+		&-item {
+			color: var(--color) !important;
+			overflow: hidden;
+			&-image {
+				transition: all 0.2s;
+			}
+			&-user {
+				cursor: pointer;
+				text-align: left;
+				justify-content: flex-start !important;
+				gap: 10px;
+				transition: all 0.5s;	
+				background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 70%, rgba(0,0,0,0.8) 100%);
+				display: none !important;
+				@media (orientation: portrait) {
+					display: flex !important;
+				}
+				@media (max-width: 767px) {
+					display: none !important;
+				}
+				& .MuiImageListItemBar-titleWrap div {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					width: 100%;
+					& a {
+						background-color: var(--color);
+						border-radius: 20%;
+						color: var(--headcolor);
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						padding: 5px;
+						&:hover {
+							color: var(--secondcolor);
+						}
+					}
+				}
+				& img {
+					border-radius: 50%;
+				}
+			}
+		}
+	}
+	&__pagination  {
+		margin: 50px;
+		display: flex;
+		align-items: center;
+		gap: 3vw;
+		justify-content: center;
+		&.top {
+			gap: 10px;
+			justify-content: flex-end;
+			margin-right: 0;
+		}
+		& button {
+			border-radius: 5px;
+			background-color: var(--secondcolor);
+			padding: 16px 20px;
+			color: var(--color);
+			border-top-right-radius: 5px;
+			border-bottom-right-radius: 5px;
+			font-size: calc(var(--index) * 1.1);
+			cursor: pointer;
+			font-family: inherit;
+			transition: all 0.2s;
+			position: relative;
+			& .icon {
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					transform: translate(-50%, -50%) scale(0);
+					transition: all 0.2s;
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.images__pagination button:hover {
+		color: var(--secondcolor) !important;
+	}
+	.images__pagination button:hover .icon{
+		color: white;
+		transform: translate(-50%, -50%) scale(1);
+	}
+}
+@media (min-width: 767px) {
+	.images__container-item:hover {
+		.images__container-item-user {
+			display: flex !important;
+		}
+		.images__container-item-image {
+			opacity: 0.8;
+		}
+	}
+}

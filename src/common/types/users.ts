@@ -1,0 +1,41 @@
+export interface IUser {
+	accepted_tos: boolean,
+	allow_messages: boolean,
+	badge: {
+		link: any,
+		primary: boolean,
+		slug: string,
+		title: string
+	},
+	bio: string,
+	downloads: number,
+	first_name: string,
+	followed_by_user: boolean,
+	followers_count: number,
+	following_count: number,
+	for_hire: boolean,
+	id: string,
+	instagram_username: string,
+	last_name: string,
+	links: any,
+	location: any,
+	meta: {
+		index: boolean
+	},
+	name: string,
+	numeric_id: number,
+	photos: any,
+	portfolio_url: string,
+	profile_image: any,
+	social: any,
+	tags: any,
+	total_collections: number,
+	total_illustrations: number,
+	total_likes: number,
+	total_photos: number,
+	total_promoted_illustrations: number,
+	total_promoted_photos: number,
+	twitter_username: string,
+	updated_at: string,
+	username: string
+}
